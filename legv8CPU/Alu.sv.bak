@@ -1,0 +1,21 @@
+`include "headers/bus.svh"
+`include "headers/aluop.svh"
+
+module Alu(input logic[`ALUOPSIZE-1:0] alu_op,
+input logic[`REGDATASIZE-1:0] operand1,
+operand2,
+output logic[`REGDATASIZE-1:0] result);
+ 
+ always_comb begin
+	casex(alu_op)
+		`ALUOP_SUB    : result = operand1 - operand2;
+		`ALUOP_LSHIFT : result = operand1 << operand2;
+		`ALUOP_RSHIFT : result = operand1 >> operand2;
+		`ALUOP_XOR    : result = operand1 ^ operand2;
+		`ALUOP_ADD    : result = operand1 + operand2;
+		`ALUOP_ORR    : result = operand1 | operand2;
+		`ALUOP_AND    : result = operand1 & operand2;
+		default       : result = operand1 + operand2
+	endcase
+ end
+endmodule : Alu
