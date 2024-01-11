@@ -1,8 +1,0 @@
-module tbControlUnit();
-logic [`OPCODESIZE - 1:0] opcode;
-ControlUnit ControlUnit(
-.opcode(opcode),
-.control(control),
-.alu_op(alu_op),
-.branch_op(branch_op)
-);

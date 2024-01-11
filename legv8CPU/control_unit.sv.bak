@@ -1,6 +1,0 @@
-`include "control.svh"
-`include "aluop.svh"
-
-module ctrl_Unit(input logic[10:0] Opcode,
-output logic [CONTROLSIZE - 1:0] control,
-output logic [ALUOPSIZE-1:0] alu_op);
