@@ -88,7 +88,7 @@ endmodule : ControlUnit
 
 /*********************************************************
 
-					CHILD MODULE DECLARATIONS
+		CHILD MODULE DECLARATIONS
 
 *********************************************************/
 					
@@ -145,7 +145,7 @@ output logic [`ALUOPSIZE - 1:0] alu_op
 	casex(ri_upper_lower)
 		6'b11x100  : alu_op[4] = 1'b1;
 		default : alu_op[4] = 1'b0;
-   endcase
+        endcase
 	//shift bits alu op
 	alu_op[3] = op_shift & shift_dir;
 	alu_op[2] = op_shift;
